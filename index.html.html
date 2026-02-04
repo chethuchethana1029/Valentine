@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #b30059;
+      font-size: 38px;
+    }
+
+    .buttons {
+      margin-top: 50px;
+      position: relative;
+      height: 200px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff3366;
+      color: white;
+    }
+
+    #no {
+      background-color: #cccccc;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #800040;
+      min-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Hey Bajariiii 💕<br>Will you be my Valentine? 💘</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 😍</button>
+    <button id="no" onmouseover="moveNo()">No 🙃</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "Haha 😜 you cannot reject me!",
+      "Nice try, but NO is not allowed 😏",
+      "Oops! That button doesn’t work 😂",
+      "Destiny says YES only 💖",
+      "Why are you even trying? 😌",
+      "Rejected? Impossible 😎"
+    ];
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const msg = document.getElementById("message");
+
+      const x = Math.random() * 300;
+      const y = Math.random() * 150;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+
+      const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+      msg.innerText = randomMsg;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1 style="margin-top:150px; color:#b30059;">
+          YAYYYY 💘💘💘 <br><br>
+          I knew it Bajariiii 😍<br><br>
+          Happy Valentine’s Day ❤️
+        </h1>`;
+    }
+  </script>
+
+</body>
+</html>
